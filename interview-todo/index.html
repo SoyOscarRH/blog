@@ -1,0 +1,629 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>During</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="74504182-1101-4c8e-9d5f-cce545bdf93e" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1553895501-af9e282e7fc1?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;ixid=eyJhcHBfaWQiOjYzOTIxfQ" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="https://static.thenounproject.com/png/229056-200.png"/></div><h1 class="page-title">During</h1></header><div class="page-body"><h1 id="1951506d-af2e-4a06-a256-0a73a8d38e95" class="">Prepare before</h1><h3 id="191da784-97d3-4bd6-b7ee-89639b455b39" class="">Set up in Google Docs</h3><div id="5371071b-37ca-4fcb-8dfd-03534296be35" class="column-list"><div id="f26a8a30-ce6d-4430-87f4-cd92184e9da8" style="width:33.333333333333336%" class="column"><figure id="997441e7-a4cf-46a5-bdad-643b8efb1a11" class="image"><a href="images/a.png"><img style="width:480px" src="images/a.png"/></a></figure></div><div id="b53dd64d-016e-4a24-90f1-94126ab7cd29" style="width:33.333333333333336%" class="column"><figure id="76bba721-5d39-42b4-8369-f2ba845009e8" class="image"><a href="images/b.png"><img style="width:480px" src="images/b.png"/></a></figure></div><div id="4c56a37b-d21a-4d16-9414-903d4bd1ef5d" style="width:33.33333333333333%" class="column"><figure id="f2b67661-9425-4b11-a374-c2228ebd4e47" class="image"><a href="images/c.png"><img style="width:384px" src="images/c.png"/></a></figure></div></div><hr id="19a0f9ec-c1a2-4956-ae2d-d0c61f8ecbb8"/><h1 id="e282b76a-7f87-4068-8b5f-18181256235c" class="">Think in</h1><ul id="28d9222b-ba39-4c3b-bfee-40ecf28aa7d7" class="block-color-yellow_background bulleted-list"><li><strong>Is like me and a coworker have a problem to solve together, but I am the leader, I will do 90% of the work, but is a discussion.</strong></li></ul><ul id="108d8b7c-8fb9-4e3f-b449-30f1c0323b57" class="block-color-yellow_background bulleted-list"><li><strong>Do not erase any process, just add blank spaces and move on</strong></li></ul><ul id="be1bc28e-5c05-47f4-a39a-dda52e6ec94d" class="block-color-yellow_background bulleted-list"><li><strong>Is OK and expected to get stuck, use the get stuck parts to show how you would solve a bug in real life</strong></li></ul><ul id="a45d6c84-b6e9-450b-b5f8-aba0a3ae8ea1" class="block-color-yellow_background bulleted-list"><li><strong>They are going to contract a HUMAN, so express yourself in the interviews: Use humor to make it informal; show interest; be relaxed; ask questions; think aloud. </strong></li></ul><ul id="c9c354d0-a6e2-4919-8584-df9b5c08c2d9" class="block-color-yellow_background bulleted-list"><li><strong>The code and comments are the only thing going to the hiring committee, so write everything, they will have no context and they are not going to read super carefully the text and code.</strong></li></ul><p id="0cecfccf-ce75-4cd7-82a1-ace9547981d1" class="">
+</p><ol id="e393d1a1-29bf-46c4-938f-0e4082cdbdfe" class="block-color-gray_background numbered-list" start="1"><li>Did you ask enough questions at the beginning so that you are building the right solution? Or did you go off based on assumptions that you didn’t validate?</li></ol><ol id="e0f82607-5d92-4f66-a70c-3b170f2a3782" class="block-color-gray_background numbered-list" start="2"><li>Are you explaining things as you work? Saying why you are doing this, why you are doing that. Again, checking with your interviewer if you are getting the details right. Maybe asking for clues rather than being stumped.</li></ol><ol id="72f12aec-9c90-461a-bd12-77e180a1bf60" class="block-color-gray_background numbered-list" start="3"><li>Is your code neat and readable? Are your variable names descriptive? Or are you using lots of 1 letter names and cryptic abbreviations? Or are you being too verbose, names that are sentences—I sometimes overdo that. Is your code using the well-known idioms?</li></ol><ol id="5c2614aa-217e-4b42-82d8-545fd5da5d2a" class="block-color-gray_background numbered-list" start="4"><li>Are you thinking about the edge and corner cases? Are you making a list of things to test for? Are you putting in hints where you think your code should be defensive and checking that it is not doing the wrong thing?</li></ol><hr id="f3fae0d4-4ef8-4297-a3bf-cfec938d6929"/><h1 id="74dabaf9-b6ee-4805-80a5-2c3fb98e01b2" class="">During</h1><ul id="1983d526-f219-4cea-97e9-af714b27fb8a" class="block-color-purple_background bulleted-list"><li>Find name, can you help me with your name?</li></ul><h3 id="87b93847-7804-49e2-9c25-e609abd8ecf6" class="">Presentation</h3><ul id="4f1cf971-6e8b-4249-83e3-042d92251e46" class="block-color-brown_background bulleted-list"><li>Tell what you would love to work on</li></ul><ul id="9e652477-46e0-4057-b575-5c5d728c4df1" class="block-color-brown_background bulleted-list"><li>Show that you get better in each interview</li></ul><ul id="838d3331-fc48-492b-9ec1-1e9b13824a9a" class="block-color-brown_background bulleted-list"><li>Show you are rounded</li></ul><ul id="9aa73cc2-4ec0-4a21-b583-495ef047ca58" class="block-color-brown_background bulleted-list"><li>Show you never stop learning, an eagerness to learn</li></ul><h3 id="3906ad4f-686b-4709-a114-45913b45bf1b" class="">Understand the question</h3><ul id="f672e77e-810a-4f8d-9753-3597d52c94d2" class="block-color-yellow_background bulleted-list"><li>Repeat the question with your own words</li></ul><ul id="2aa03d65-c688-4c3b-8ae1-42788e977c76" class="block-color-yellow_background bulleted-list"><li><em>Think of 2 - 3 really good test cases for the problem</em> (edge cases, hacky possible inputs, ambiguous inputs)</li></ul><ul id="ebeea351-b0e7-4fce-8978-6cfa7bdcb39b" class="block-color-yellow_background bulleted-list"><li>Think about the kind of input, output and obvious edge cases</li></ul><ul id="35f3482c-8c45-4548-88e1-49ce5c233e98" class="block-color-yellow_background bulleted-list"><li>Can I assume that .... (State your assumptions)</li></ul><h3 id="be2bcdbb-ab94-4c12-92d4-9afc0b7f3cdd" class="">Lets talk about solutions</h3><ul id="78dd5211-4e9c-4fac-937f-8421dce1ab53" class="block-color-orange_background bulleted-list"><li>Communicate the brute force solution as a first option to check your general understanding</li></ul><ul id="7f01a789-d6d5-4200-b87b-9df18b0a17a2" class="block-color-orange_background bulleted-list"><li>In what are we doing extra work / better way to do the same conceptually?</li></ul><ul id="8567b5b8-7d8c-4b12-ba7c-e60094a3e44d" class="block-color-orange_background bulleted-list"><li>Communicate and compare <strong><em>MANY</em></strong> options (2+ solutions) and tradeoffs of each of them</li></ul><ul id="98315c7d-1040-430a-8387-5dae9e99984b" class="block-color-orange_background bulleted-list"><li>Analyze deeper one solution / path<ul id="5b0cf199-94c7-4ff7-957a-fbd84af300b1" class="block-color-orange_background bulleted-list"><li>Worst and average time and space complexity</li></ul><ul id="ad77dbac-8b52-48a8-977a-c5dffa03c7c3" class="block-color-orange_background bulleted-list"><li>Is this good enough?</li></ul><ul id="47b275f5-a6d9-43a0-9fa4-d51c50b7a8dc" class="block-color-orange_background bulleted-list"><li>Constants are OK</li></ul></li></ul><h3 id="84279289-413b-4b09-a770-44308d35be8d" class="">Code</h3><ul id="d2a849e6-5ea5-48ff-bc87-2addb6bdaf71" class="block-color-teal_background bulleted-list"><li>Talk about asserts and exceptions for inputs</li></ul><ul id="c5ea27e8-d002-42ae-8a7a-01fdc4d907cb" class="block-color-teal_background bulleted-list"><li>If code is getting complicated relax and check your solution at large</li></ul><ul id="1d06f5eb-7255-47fb-b0f2-fe413c548835" class="block-color-teal_background bulleted-list"><li>Use <strong>helper functions</strong>, declare them and use them</li></ul><ul id="7a95a83a-8034-4fbf-9c5f-ce72d9eccc66" class="block-color-teal_background bulleted-list"><li>Create comments through the code, good variable names</li></ul><h3 id="9ee76bb8-d169-4954-a165-c9c82cd24e4a" class="">Test the code</h3><div id="d19e7649-18a3-491b-af0e-ba612a188338" class="column-list"><div id="ed0067ae-98e0-46bc-b706-7a708e291760" style="width:62.5%" class="column"><ul id="74e35471-b481-4708-818e-f069a966b9f1" class="block-color-pink_background bulleted-list"><li><strong>Functional testing </strong>- does it work?</li></ul><ul id="615c12df-fdcc-48ad-82f4-27f76e0bb41a" class="block-color-pink_background bulleted-list"><li><strong>Edge cases </strong>- test limits of a single parameter</li></ul><ul id="51f034b3-700e-4f46-8173-09b4df43a64c" class="block-color-pink_background bulleted-list"><li><strong>Corner cases</strong> - test limited of multiple parameters</li></ul><ul id="54b3d181-f31d-4412-ae0a-87a9d33a35f3" class="block-color-pink_background bulleted-list"><li><strong>Stress test</strong> - simulate lots of users of a service</li></ul><ul id="7aef0ada-9923-41a3-baf6-510272ec4f75" class="block-color-pink_background bulleted-list"><li><strong>Scale testing</strong> - how does it handle inputs of absurdly large size?</li></ul><ul id="267d17d8-3ff6-4fec-ac41-83d61143bd77" class="block-color-pink_background bulleted-list"><li><strong>Cross-functional testing </strong>- how does it impact other parts of the code base?</li></ul><ul id="24db385c-6284-4a79-91b9-ff0f5cfa6d57" class="block-color-pink_background bulleted-list"><li><strong>Geo-political testing</strong> - does it still make sense in other areas with different cultures?</li></ul></div><div id="74779f12-583c-4001-b50e-6eae97a1f748" style="width:37.49999999999999%" class="column"><h3 id="4ab81788-ea01-422c-9278-b134ee5ea35d" class="block-color-pink_background">Do test cases</h3><p id="3424d426-fbe7-40ee-907e-d8f7a61adff0" class="block-color-pink_background"><strong>Code IS VERY LIKELY TO HAVE BUGS, search for them</strong></p><p id="a724e063-89d8-4677-8aa6-fe8309950271" class="block-color-pink_background"><strong>Forget about the idea, you are a machine, execute the code</strong></p><p id="db6d49e1-1d46-4117-96cc-a0c08038ca85" class="block-color-pink_background"><strong>Think a really shitty person wrote the code, how would you break it?</strong></p></div></div><h3 id="fe33eb11-2bb4-40de-960f-e67b51d4467e" class="">More time?</h3><ul id="f016fd60-14c9-4831-93c3-5e563ba232b5" class="block-color-brown_background bulleted-list"><li>Discuss possible optimizations</li></ul><ul id="f286e45d-2569-4b7e-af59-514676434e4d" class="block-color-brown_background bulleted-list"><li>&quot;If I had more time I would...&quot;</li></ul><h3 id="4f0b7de0-a353-42c1-9894-54037f326a05" class="">Questions after</h3><p id="29278f12-174e-4875-87c5-cbe22bb7cd3e" class=""><strong>Specific question about this company, specific tools</strong></p><ul id="0c61a4f0-6cf5-4173-a060-e41504b18d73" class="block-color-blue_background bulleted-list"><li>Tell me more about your work</li></ul><ul id="4d2864fb-a637-4a55-8d1c-322e497aeecd" class="block-color-blue_background bulleted-list"><li>How she / he managed to fit in the company</li></ul><ul id="8d90cf4a-1af3-441c-928e-b0d412b33b7a" class="block-color-blue_background bulleted-list"><li>What’s your typical work day like?</li></ul><ul id="9c8669ad-85af-4d4e-96ba-bafd2a69b84d" class="block-color-blue_background bulleted-list"><li>What’s one thing you really like about working at the company and one thing you’d like see improvement on?</li></ul><p id="73228773-9364-4157-b450-0470c9c7c1ec" class="">
+</p></div></article></body></html>
